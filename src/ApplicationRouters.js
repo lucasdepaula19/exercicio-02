@@ -5,7 +5,7 @@ import { InitialPage, ListUsers, User } from "./components";
 export const ApplicationRoutes = () => (
   <>
     <Route path="/" exact component={InitialPage} />
-    <Route path="/listUsers/" component={ListUsers} />
-    <Route path="/user/" component={User} />
+    <Route path="/users/" component={ListUsers} />
+    <Route path="/user/:name" component={User} />
   </>
 );

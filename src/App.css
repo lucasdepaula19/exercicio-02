@@ -1,3 +1,7 @@
+body{
+  margin: 2em;
+}
+
 .App {
   text-align: center;
 }
@@ -30,4 +34,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.formatTable{
+  width: 60%;
 }

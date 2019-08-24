@@ -1,4 +1,8 @@
 import React from "react";
 
-export const User = () =>
-    <div><h1>User</h1></div>
+// Qual a diferença de criar um componente como constante ou como função ?
+export const User = (props) => (
+    <>
+        <h1>User name is: {props.match.params.name}</h1>
+    </>
+)
