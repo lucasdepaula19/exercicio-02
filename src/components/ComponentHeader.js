@@ -10,9 +10,6 @@ export const FirstHeader = () => (
             <li>
                 <Link to="/users">List Users</Link>
             </li>
-            <li>
-                <Link to="/user/:name">User</Link>
-            </li>
         </ul>
     </>
 )
