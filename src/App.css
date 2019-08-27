@@ -50,3 +50,7 @@ td button{
   float: right;
   margin-right: 10px;
 }
+
+form button{
+  margin-left: 10px;
+}
