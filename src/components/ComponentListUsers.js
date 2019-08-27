@@ -18,14 +18,14 @@ export class ListUsers extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            users: usuarios,
-            result: usuarios,
+            list: usuarios,
+            searchResult: usuarios,
         }
-        this.search = this.search.bind(this);
+        this.search = this.filter.bind(this);
     }
 
     del(e, param) {
-        let users = this.state.users;
+        let users = this.state.list;
 
         for (var i = 0; i < users.length; i++) {
             if (users[i].name === param) {
@@ -36,17 +36,18 @@ export class ListUsers extends React.Component {
         e.preventDefault();
     }
 
-    search(event) {
-        let value = event.target.value;
-        let users = this.state.users, result = [];
-        result = users.filter((user) => {
-            return user.name.toLowerCase().search(value) !== -1;
+    filter(evt) {
+        let value = evt.target.value;
+        let usersList = this.state.list;
+        let searchResult = [];
+        searchResult = usersList.filter((userFilter) => {
+            return userFilter.name.toLowerCase().search(value) !== -1;
         });
-        this.setState({ result });
+        this.setState({ searchResult });
     }
 
     viewForm() {
-        return this.state.result.map((usuarios) => {
+        return this.state.searchResult.map((usuarios) => {
             const { name, email, age } = usuarios
             return (
                 <tr>
