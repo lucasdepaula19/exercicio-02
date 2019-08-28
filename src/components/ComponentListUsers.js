@@ -18,14 +18,14 @@ export class ListUsers extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: usuarios,
+            InitialList: usuarios,
             searchResult: usuarios,
         }
         this.search = this.filter.bind(this);
     }
 
     del(e, param) {
-        let users = this.state.list;
+        let users = this.state.searchResult;
 
         for (var i = 0; i < users.length; i++) {
             if (users[i].name === param) {
@@ -38,12 +38,13 @@ export class ListUsers extends React.Component {
 
     filter(evt) {
         let value = evt.target.value;
-        let usersList = this.state.list;
+        let usersList = this.state.InitialList;
         let searchResult = [];
         searchResult = usersList.filter((userFilter) => {
             return userFilter.name.toLowerCase().search(value) !== -1;
         });
         this.setState({ searchResult });
+
     }
 
     viewForm() {
